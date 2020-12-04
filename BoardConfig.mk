@@ -131,3 +131,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 PLATFORM_VERSION := 16.1.0
 TW_OZIP_DECRYPT_KEY := "0000"
 TW_INCLUDE_LOGICAL := oppo_product oppo_engineering common_preload
+
+# PBRP specific build flags
+PB_TORCH_PATH := "/sys/class/flashlight"
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
