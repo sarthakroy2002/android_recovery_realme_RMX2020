@@ -4,10 +4,10 @@ jobs:
    docker:
       - image: ubuntu:18.04
    environment:
-      GIT_EMAIL: 'iamhp2k@gmail.com'
-      GIT_NAME: 'hpnightowl'
-      VERSION: '3.0.0'
-      PBRP_MANIFEST: 'android-9.0'
+      GIT_EMAIL: 'skoyande17@gmail.com'
+      GIT_NAME: 'siddhrsh'
+      VERSION: '3.5.0'
+      MANIFEST: 'android-10.0'
       VENDOR: 'realme'
       DEVICE: 'rmx2020'
    steps:
@@ -23,7 +23,7 @@ jobs:
            git config --global user.email "${GIT_EMAIL}"
            git config --global user.name "${GIT_NAME}"
            git config --global color.ui false
-           repo init --depth=1 -u git://github.com/PitchBlackRecoveryProject/manifest_pb.git -b ${PBRP_MANIFEST}
+           repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
            repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle --prune --optimized-fetch
            git clone https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} -b ${CIRCLE_BRANCH} device/${VENDOR}/${DEVICE}
            export ALLOW_MISSING_DEPENDENCIES=true
@@ -35,7 +35,7 @@ jobs:
            export UPLOAD_PATH=$(pwd)/out/target/product/${DEVICE}/upload/
            mkdir ${UPLOAD_PATH}
            cp $BUILDFILE_IMG $UPLOAD_PATH
-           ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -n "Latest Release for $(echo $DEVICE)" -b "PBRP $(echo $VERSION)" -c ${CIRCLE_SHA1} -delete ${VERSION} ${UPLOAD_PATH}
+           ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -n "Latest Release for $(echo $DEVICE)" -b "TWRP $(echo $VERSION)" -c ${CIRCLE_SHA1} -delete ${VERSION} ${UPLOAD_PATH}
 workflows:
   version: 2.1
   cooking:
