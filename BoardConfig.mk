@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/rmx2185
+DEVICE_PATH := device/realme/RMX2185
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -45,7 +45,7 @@ TARGET_USES_UEFI := true
 TARGET_BOARD_PLATFORM := mt6765
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := rmx2185
+TARGET_OTA_ASSERT_DEVICE := RMX2185,rmx2185
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user loop.max_part=70
@@ -131,7 +131,3 @@ TW_SCREEN_BLANK_ON_BOOT := true
 PLATFORM_VERSION := 16.1.0
 TW_OZIP_DECRYPT_KEY := "0000"
 TW_INCLUDE_LOGICAL := oppo_product oppo_engineering common_preload
-
-# PBRP specific build flags
-PB_TORCH_PATH := "/sys/class/flashlight"
-PB_DISABLE_DEFAULT_TREBLE_COMP := true
