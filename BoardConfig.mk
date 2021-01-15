@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/rmx2020
+DEVICE_PATH := device/realme/RMX2020
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -83,7 +83,7 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25384959488
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := rmx2020
+TARGET_OTA_ASSERT_DEVICE := RMX2020
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
