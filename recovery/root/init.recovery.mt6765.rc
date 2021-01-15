@@ -3,14 +3,14 @@ on fs
     mkdir /mnt/vendor/persist 0777 system system
     setprop crypto.ready 1
 
-service keystore_auth /sbin/keystore_auth
+service keystore_auth /system/bin/keystore_auth
     oneshot
     user system
     group root
     disabled
     seclabel u:r:recovery:s0
 
-service keystore /sbin/keystore /tmp/misc/keystore
+service keystore /system/bin/keystore /tmp/misc/keystore
     user root
     group root drmrpc readproc
     disabled
@@ -36,25 +36,29 @@ service mobicore /sbin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
 	-r /vendor/app/mcRegistry/05070000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/030f0000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/09070000000000000000000000000000.drbin
+service mobicore /system/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
+    -r /vendor/app/mcRegistry/06090000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/020f0000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/05120000000000000000000000000000.drbin
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
 
 #Add for OPPO FBE
-service hal_cryptoeng_oppo /sbin/vendor.oppo.hardware.cryptoeng@1.0-service
+service hal_cryptoeng_oppo /system/bin/vendor.oppo.hardware.cryptoeng@1.0-service
     user root
     group root drmrpc
     disabled
     seclabel u:r:recovery:s0
 
-service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service.trustonic
+service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service.trustonic
     user root
     group root drmrpc
     disabled
     seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service
+service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
     user root
     group root
     disabled
