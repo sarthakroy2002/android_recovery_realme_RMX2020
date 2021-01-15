@@ -156,6 +156,7 @@ TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_LOGICAL := oppo_product oppo_engineering preload_common
 TW_OZIP_DECRYPT_KEY := "0000"
 TW_NO_SCREEN_BLANK := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
