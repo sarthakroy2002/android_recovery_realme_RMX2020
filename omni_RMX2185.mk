@@ -37,8 +37,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31 \
     ro.treble.enabled=true
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
-	$(LOCAL_PATH)/prebuilt/dtb:dtb.img
+# PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
+#	$(LOCAL_PATH)/prebuilt/dtb:dtb.img
 
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
