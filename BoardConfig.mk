@@ -152,3 +152,25 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+
+# NOTE - Dont use '-' or blank spaces in flag values , otherwise it will create build errors or other bugs in recovery (Excluding SHRP_PATH,SHRP_REC). 
+# Path of your SHRP Tree
+SHRP_PATH := device/realme/rmx2020
+# Maintainer name *
+SHRP_MAINTAINER := sarthakroy2002
+# Device codename *
+SHRP_DEVICE_CODE := rmx2020
+# Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
+SHRP_REC_TYPE := Treble
+# Recovery Type (It can be A/B or A_only) [Only for About Section] *
+SHRP_DEVICE_TYPE := A/B
+# Notch
+SHRP_NOTCH := true
+# EDL
+SHRP_EDL_MODE := 1
+SHRP_EXTERNAL := /external_sd
+SHRP_INTERNAL := /sdcard
+SHRP_OTG := /usb_otg
+SHRP_FLASH := 1
+# Path
+SHRP_REC := /dev/block/bootdevice/by-name/recovery 
