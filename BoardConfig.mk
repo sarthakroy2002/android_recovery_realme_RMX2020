@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/realme/rmx2020
+DEVICE_PATH := device/realme/RMX2020
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -83,7 +83,7 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25384959488
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := RMX2020
+TARGET_OTA_ASSERT_DEVICE := RMX2020,RMX2027,rmx2020
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -155,11 +155,11 @@ TARGET_USES_LOGD := true
 
 # NOTE - Dont use '-' or blank spaces in flag values , otherwise it will create build errors or other bugs in recovery (Excluding SHRP_PATH,SHRP_REC). 
 # Path of your SHRP Tree
-SHRP_PATH := device/realme/rmx2020
+SHRP_PATH := device/realme/RMX2020
 # Maintainer name *
 SHRP_MAINTAINER := sarthakroy2002
 # Device codename *
-SHRP_DEVICE_CODE := rmx2020
+SHRP_DEVICE_CODE := RMX2020
 # Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
 SHRP_REC_TYPE := Treble
 # Recovery Type (It can be A/B or A_only) [Only for About Section] *
