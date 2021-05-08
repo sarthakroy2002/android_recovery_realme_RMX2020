@@ -166,6 +166,8 @@ SHRP_DEVICE_CODE := RMX2020
 SHRP_REC_TYPE := Treble
 # Recovery Type (It can be A/B or A_only) [Only for About Section] *
 SHRP_DEVICE_TYPE := A/B
+# Official
+SHRP_OFFICIAL := true
 # Notch
 SHRP_NOTCH := true
 # EDL
