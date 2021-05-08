@@ -93,9 +93,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Dynamic Partition
 BOARD_SUPER_PARTITION_SIZE := 9126805504
-BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9126805504
-BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := product vendor system
+BOARD_SUPER_PARTITION_GROUPS := main
+BOARD_MAIN_SIZE := 9126805504
+BOARD_MAIN_PARTITION_LIST := product vendor system
 
 # System as root
 #BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
@@ -116,9 +116,10 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata
 # Crypto
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
-#TW_INCLUDE_CRYPTO := false
-#TW_INCLUDE_CRYPTO_FBE := false
-#TW_INCLUDE_FBE_METADATA_DECRYPT := false
+PLATFORM_VERSION := 16.1.0
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
@@ -145,6 +146,7 @@ TW_OZIP_DECRYPT_KEY := "0000"
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_NO_SCREEN_BLANK := true
+TW_SCREEN_BLANK_ON_BOOT := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -173,4 +175,4 @@ SHRP_INTERNAL := /sdcard
 SHRP_OTG := /usb_otg
 SHRP_FLASH := 1
 # Path
-SHRP_REC := /dev/block/bootdevice/by-name/recovery 
+SHRP_REC := /dev/block/by-name/recovery 
