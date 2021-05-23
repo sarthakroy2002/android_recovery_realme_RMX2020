@@ -5,4 +5,4 @@ oppo_product										/oppo_product		ext4			ro,barrier=1,discard wait,first_stag
 oppo_engineering 									/oppo_engineering 	ext4 			ro,barrier=1,discard wait,first_stage_mount,nofail
 preload_common 										/preload_common 	ext4 			ro,barrier=1,discard wait,first_stage_mount,nofail
 /dev/block/platform/bootdevice/by-name/userdata 	/data 				f2fs 			noatime,nosuid,nodev,noauto_da_alloc,errors=panic wait,check,formattable,quota,resize,reservedsize=128m,checkpoint=block,fileencryption=aes-256-xts
-/dev/block/platform/bootdevice/by-name/misc 		/misc 				emmc 			defaults defaults
+/dev/block/platform/bootdevice/by-name/para 		/misc 				emmc 			defaults defaults
