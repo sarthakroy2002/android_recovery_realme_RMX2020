@@ -194,3 +194,5 @@ SHRP_OTG := /usb_otg
 SHRP_FLASH := 1
 # Path
 SHRP_REC := /dev/block/by-name/recovery 
+# Dark Mode
+SHRP_DARK := true
