@@ -133,7 +133,6 @@ TW_Y_OFFSET := 50
 TW_H_OFFSET := -50
 TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_LOGICAL := oppo_product oppo_engineering common_preload
 TW_SKIP_COMPATIBILITY_CHECK := true
 TW_OZIP_DECRYPT_KEY := 0000
 
