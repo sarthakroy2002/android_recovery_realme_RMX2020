@@ -30,21 +30,28 @@ fox_get_target_device() {
 }
 
 if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
-   fox_get_target_device
+  fox_get_target_device
 fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
   export TW_DEFAULT_LANGUAGE="en"
-  export OF_KEEP_DM_VERITY=1
-  export OF_QUICK_BACKUP_LIST="/boot;/data;"
+
+  # UI related vars
   export OF_SCREEN_H=2400
   export OF_HIDE_NOTCH=1
   export OF_STATUS_INDENT_LEFT=48
   export OF_STATUS_INDENT_RIGHT=48
   export OF_STATUS_H=91
-  export ALLOW_DISABLE_NAVBAR=0
   export OF_CLOCK_POS=1
+
+  # Disable some settings that are obsolete
   export OF_FLASHLIGHT_ENABLE=0
+  export OF_ALLOW_DISABLE_NAVBAR=0
+  export OF_USE_GREEN_LED=0
+
+  # Misc
+  export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
+  export OF_QUICK_BACKUP_LIST="/boot;/data;"
   export OF_USE_MAGISKBOOT=1
   export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
   export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
@@ -56,17 +63,18 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
   export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
   export OF_SUPPORT_OZIP_DECRYPTION=1
 
+  # Building related vars
   export OF_MAINTAINER="HemanthJabalpuri"
   export FOX_VERSION="R11.1_0"
   export FOX_BUILD_TYPE="test"
   export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/by-name/recovery"
   export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
   export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
-  export FOX_EXCLUDE_NANO_EDITOR=1
-  export FOX_REMOVE_BASH=1
+  # TODO: with below flag nano not working, why?
+  #export FOX_USE_NANO_EDITOR=1
+  export FOX_REMOVE_AAPT=1
   export FOX_DELETE_AROMAFM=1
   #export FOX_DELETE_MAGISK_ADDON=1
-  export FOX_USE_SPECIFIC_MAGISK_ZIP="$HOME/OrangeFox_10/Magisk.zip"
   export FOX_DELETE_INITD_ADDON=1
 
   # let's see what are our build VARs
