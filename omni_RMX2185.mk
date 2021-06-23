@@ -16,9 +16,6 @@
 # limitations under the License.
 #
 
-# Dynamic
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
@@ -32,15 +29,9 @@ PRODUCT_BRAND := realme
 PRODUCT_MODEL := RMX2185
 PRODUCT_MANUFACTURER := realme
 
-# HACK: Set vendor patch level and enable Treble
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31 \
-    ro.treble.enabled=true
+# Dynamic
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root) \
-#	$(LOCAL_PATH)/prebuilt/dtb:dtb.img
-
+# fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
-
+    android.hardware.fastboot@1.0-impl-mock
