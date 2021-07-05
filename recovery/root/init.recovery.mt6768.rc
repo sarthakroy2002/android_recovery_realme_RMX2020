@@ -3,8 +3,6 @@ on fs
     mkdir /mnt/vendor/persist 0777 system system
     setprop crypto.ready 1
     write /sys/devices/platform/odm/odm:oppo_charger/power_supply/usb/otg_switch 1
-    # Erase the para partition to prevent recovery-looping
-    start erase_para
 
 service keystore_auth /system/bin/keystore_auth
     oneshot
@@ -52,13 +50,6 @@ service vendor.vibrator-1-0 /system/bin/android.hardware.vibrator@1.0-service
     user root
     group root input
     seclabel u:r:recovery:s0
-
-service erase_para /sbin/dd if=/dev/zero of=/dev/block/by-name/para
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-    oneshot
 
 on boot
     start vendor.vibrator-1-0
