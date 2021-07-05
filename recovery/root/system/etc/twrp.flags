@@ -1,7 +1,10 @@
 # mount point		fstype	device                 device2                        flags
 # Dyanmic Partitions
-system				ext4	/system												display="System"
-vendor				ext4	/vendor												display="Vendor"
+/system		            ext4	/dev/block/mapper/system                                flags=backup=1;display="System"
+/vendor                 ext4    /dev/block/mapper/vendor                                flags=backup=1;display="Vendor"
+/system_image	        emmc	/dev/block/mapper/system                                flags=backup=1;display="System Image";flashimg=1
+/vendor_image	        emmc	/dev/block/mapper/vendor                                flags=backup=1;display="Vendor Image";flashimg=1
+
 oppo_product		ext4	/oppo_product										display="oppo_product";
 oppo_engineering	ext4	/oppo_engineering									display="oppo_engineering";
 preload_common		ext4	/common_preload										display="preload_common";
