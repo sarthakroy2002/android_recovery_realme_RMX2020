@@ -210,4 +210,5 @@ SHRP_DARK := true
 # Flashlight
 SHRP_CUSTOM_FLASHLIGHT := true
 SHRP_FONP_1 := /proc/qcom_flash
-HRP_FLASH_MAX_BRIGHTNESS := 1
+SHRP_FONP_2 := /proc/qcom_flash
+SHRP_FLASH_MAX_BRIGHTNESS := 2
