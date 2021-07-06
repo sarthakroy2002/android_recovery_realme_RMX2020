@@ -192,26 +192,26 @@ SHRP_DEVICE_CODE := RMX2020
 # Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
 SHRP_REC_TYPE := Treble
 # Recovery Type (It can be A/B or A_only) [Only for About Section] *
-SHRP_DEVICE_TYPE := A/B
+SHRP_DEVICE_TYPE := A_only
 # Official
 SHRP_OFFICIAL := true
 # Notch
 SHRP_NOTCH := true
 # EDL
-SHRP_EDL_MODE := 1
+SHRP_EDL_MODE := 0
 SHRP_EXTERNAL := /external_sd
 SHRP_INTERNAL := /sdcard
 SHRP_OTG := /usb_otg
-SHRP_FLASH := 1
+SHRP_FLASH := 0
 # Path
 SHRP_REC := /dev/block/by-name/recovery 
 # Dark Mode
 SHRP_DARK := true
 # Flashlight
-SHRP_CUSTOM_FLASHLIGHT := true
-SHRP_FONP_1 := /proc/qcom_flash
-SHRP_FONP_2 := /proc/qcom_flash
-SHRP_FLASH_MAX_BRIGHTNESS := 2
+#SHRP_CUSTOM_FLASHLIGHT := true
+#SHRP_FONP_1 := /proc/qcom_flash
+#SHRP_FONP_2 := /proc/qcom_flash
+#SHRP_FLASH_MAX_BRIGHTNESS := 2
 # Magisk
 INC_IN_REC_MAGISK := true
 
@@ -253,16 +253,9 @@ SHRP_EXTERNAL_ADDON_6_FILENAME := "Imei-Backup.zip"
 SHRP_EXTERNAL_ADDON_6_BTN_TEXT := "Flash"
 SHRP_EXTERNAL_ADDON_6_SUCCESSFUL_TEXT := "Flashed Successfully"
 SHRP_INC_IN_REC_EXTERNAL_ADDON_6 := true
-SHRP_EXTERNAL_ADDON_7_NAME := "Unlock Logo Remover"
-SHRP_EXTERNAL_ADDON_7_INFO := "Removes Unlock Logo on Redmi Splash Screen"
-SHRP_EXTERNAL_ADDON_7_FILENAME := "Unlock-Logo-Remover.zip"
-SHRP_EXTERNAL_ADDON_7_BTN_TEXT := "Flash"
-SHRP_EXTERNAL_ADDON_7_SUCCESSFUL_TEXT := "Flashed Successfully"
-SHRP_INC_IN_REC_EXTERNAL_ADDON_7 := true
 INC_IN_REC_ADDON_1 := true
 INC_IN_REC_ADDON_2 := true
 INC_IN_REC_ADDON_3 := true
 INC_IN_REC_ADDON_4 := true
 INC_IN_REC_ADDON_5 := true
 INC_IN_REC_ADDON_6 := true
-INC_IN_REC_ADDON_7 := true
