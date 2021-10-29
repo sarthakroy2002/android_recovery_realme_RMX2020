@@ -1,11 +1,11 @@
 # mount point    fstype    device                       device2               flags
-/recovery        emmc      /dev/block/by-name/recovery    flags=backup;flashimg
-/boot            emmc      /dev/block/by-name/boot        flags=backup;flashimg
-/cache           ext4      /dev/block/by-name/cache
-/dtbo            emmc      /dev/block/by-name/dtbo        flags=backup;flashimg
-/vbmeta          emmc      /dev/block/by-name/vbmeta      flags=backup;flashimg
-/persist         ext4      /dev/block/by-name/persist     flags=backup
-/metadata        ext4      /dev/block/by-name/md_udc
+/recovery        emmc      /dev/block/by-name/recovery    flags=backup=1;display="Recovery"
+/boot            emmc      /dev/block/by-name/boot        flags=backup=1;display="Boot";flashimg=1
+/cache           ext4      /dev/block/by-name/cache       flags=backup=1;display="Cache";wipeingui
+/dtbo            emmc      /dev/block/by-name/dtbo        flags=backup=1;display="DTBO";flashimg=1
+/vbmeta          emmc      /dev/block/by-name/vbmeta      flags=backup=1;display="VBMeta";flashimg=1
+/persist         ext4      /dev/block/by-name/persist     flags=display="Persist";backup=1;
+/metadata        ext4      /dev/block/by-name/md_udc      flags=display="Metadata"
 /tee1            emmc      /dev/block/by-name/tee1        flags=backup
 /tee2            emmc      /dev/block/by-name/tee2        flags=backup
 /persistent      emmc      /dev/block/by-name/frp         flags=backup
@@ -14,16 +14,22 @@
 /logo            emmc      /dev/block/by-name/logo        flags=backup;flashimg
 /expdb           emmc      /dev/block/by-name/expdb
 /seccfg          emmc      /dev/block/by-name/seccfg
+/para            emmc      /dev/block/by-name/para
+
+/data            ext4      /dev/block/by-name/userdata    fileencryption=aes-256-xts:aes-256-cts:v1
 
 # IMEI and modem related
 # below four partitions are ext4, but we are using only for backup so emmc
-/protect_f       emmc      /dev/block/by-name/protect1    flags=backup
-/protect_s       emmc      /dev/block/by-name/protect2    flags=backup
-/nvdata          emmc      /dev/block/by-name/nvdata      flags=backup
-/nvcfg           emmc      /dev/block/by-name/nvcfg       flags=backup
-/nvram           emmc      /dev/block/by-name/nvram       flags=backup
-/proinfo         emmc      /dev/block/by-name/proinfo     flags=backup
+/protect_f       ext4      /dev/block/by-name/protect1    flags=display="Protect_F";backup=1;
+/protect_s       ext4      /dev/block/by-name/protect2    flags=display="Protect_S";backup=1;
+/nvram           emmc      /dev/block/by-name/nvram       flags=display="NvRam";backup=1;
+/nvdata          ext4      /dev/block/by-name/nvdata      flags=display="NvData";backup=1;subpartitionof=/nvram;
+/nvcfg           ext4      /dev/block/by-name/nvcfg       flags=display="NvCfg";backup=1;subpartitionof=/nvram;
+/proinfo         emmc      /dev/block/by-name/proinfo     
+
+/vbmeta_system    emmc     /dev/block/by-name/vbmeta_system           flags=display="Vbmeta System";flashimg=1;backup=1;
+/vbmeta_vendor    emmc     /dev/block/by-name/vbmeta_vendor           flags=display="Vbmeta Vendor";flashimg=1;backup=1;
 
 # Removable storage
 /external_sd     auto      /dev/block/mmcblk1p1         /dev/block/mmcblk1
-/usb-otg         auto      /dev/block/sda1              /dev/block/sda        flags=storage;wipeingui;removable
+/usb-otg         auto      /dev/block/sda1              /dev/block/sda        flags=display="USB Storage";storage;wipeingui;removable

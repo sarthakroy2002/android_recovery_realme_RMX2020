@@ -3,3 +3,7 @@ ro.boot.avb_version=1.1
 ro.boot.vbmeta.avb_version=1.1
 ro.vendor.mediatek.platform=MT6768
 ro.product.product.device=RMX2020
+ro.sys.usb.bicr=no
+ro.sys.usb.charging.only=yes
+ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp
