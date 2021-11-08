@@ -90,4 +90,4 @@ on post-fs-data
     mkdir /data/vendor_de/0/cryptoeng 0770 system system
 
 on boot
-    start health-hal-2-0
+    start health-hal-2-1
