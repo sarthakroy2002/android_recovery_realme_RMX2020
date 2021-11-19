@@ -176,88 +176,8 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 TW_INCLUDE_FUSE_EXFAT := true
 
 # NTFS Support
-TW_INCLUDE_FUSE_NTFS := tru
+TW_INCLUDE_FUSE_NTFS := true
 
 # Debug
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-
-# NOTE - Dont use '-' or blank spaces in flag values , otherwise it will create build errors or other bugs in recovery (Excluding SHRP_PATH,SHRP_REC). 
-# Path of your SHRP Tree
-SHRP_PATH := device/realme/RMX2020
-# Maintainer name *
-SHRP_MAINTAINER := sarthakroy2002
-# Device codename *
-SHRP_DEVICE_CODE := RMX2020
-# Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
-SHRP_REC_TYPE := Treble
-# Recovery Type (It can be A/B or A_only) [Only for About Section] *
-SHRP_DEVICE_TYPE := A_only
-# Official
-SHRP_OFFICIAL := true
-# Notch
-SHRP_NOTCH := true
-# EDL
-SHRP_EDL_MODE := 0
-SHRP_EXTERNAL := /external_sd
-SHRP_INTERNAL := /sdcard
-SHRP_OTG := /usb_otg
-SHRP_FLASH := 0
-# Path
-SHRP_REC := /dev/block/by-name/recovery 
-# Dark Mode
-SHRP_DARK := true
-# Flashlight
-#SHRP_CUSTOM_FLASHLIGHT := true
-#SHRP_FONP_1 := /proc/qcom_flash
-#SHRP_FONP_2 := /proc/qcom_flash
-#SHRP_FLASH_MAX_BRIGHTNESS := 2
-# Magisk
-INC_IN_REC_MAGISK := true
-
-#SHRP Addons
-SHRP_EXTERNAL_ADDON_PATH := "device/realme/RMX2020/addon/"
-SHRP_EXTERNAL_ADDON_1_NAME := "SELinux Permissiver"
-SHRP_EXTERNAL_ADDON_1_INFO := "Makes SELinux Permissive"
-SHRP_EXTERNAL_ADDON_1_FILENAME := "permissiver.zip"
-SHRP_EXTERNAL_ADDON_1_BTN_TEXT := "Flash"
-SHRP_EXTERNAL_ADDON_1_SUCCESSFUL_TEXT := "Flashed Successfully"
-SHRP_INC_IN_REC_EXTERNAL_ADDON_1 := true
-SHRP_EXTERNAL_ADDON_2_NAME := "SELinux Enforcer"
-SHRP_EXTERNAL_ADDON_2_INFO := "Reverts Back to Enforcing SELinux"
-SHRP_EXTERNAL_ADDON_2_FILENAME := "enforcer.zip"
-SHRP_EXTERNAL_ADDON_2_BTN_TEXT := "Flash"
-SHRP_EXTERNAL_ADDON_2_SUCCESSFUL_TEXT := "Flashed Successfully"
-SHRP_INC_IN_REC_EXTERNAL_ADDON_2 := true
-SHRP_EXTERNAL_ADDON_3_NAME := "[MAGISK] Safetynet Fix"
-SHRP_EXTERNAL_ADDON_3_INFO := "A magisk module which attempts to fix Safetynet"
-SHRP_EXTERNAL_ADDON_3_FILENAME := "safetynet-fix.zip"
-SHRP_EXTERNAL_ADDON_3_BTN_TEXT := "Flash"
-SHRP_EXTERNAL_ADDON_3_SUCCESSFUL_TEXT := "Flashed Successfully"
-SHRP_INC_IN_REC_EXTERNAL_ADDON_3 := true
-SHRP_EXTERNAL_ADDON_4_NAME := "[MAGISK] Blur Enabler"
-SHRP_EXTERNAL_ADDON_4_INFO := "A magisk module which Enables Blur in System"
-SHRP_EXTERNAL_ADDON_4_FILENAME := "blur-enabler.zip"
-SHRP_EXTERNAL_ADDON_4_BTN_TEXT := "Install"
-SHRP_EXTERNAL_ADDON_4_SUCCESSFUL_TEXT := "Installed"
-SHRP_INC_IN_REC_EXTERNAL_ADDON_4 := true
-SHRP_EXTERNAL_ADDON_5_NAME := "[MAGISK] Nav-Bar Space Remover"
-SHRP_EXTERNAL_ADDON_5_INFO := "Removes Space Under Keyboard"
-SHRP_EXTERNAL_ADDON_5_FILENAME := "navbareliminator.zip"
-SHRP_EXTERNAL_ADDON_5_BTN_TEXT := "Install"
-SHRP_EXTERNAL_ADDON_5_SUCCESSFUL_TEXT := "Installed"
-SHRP_INC_IN_REC_EXTERNAL_ADDON_5 := true
-SHRP_EXTERNAL_ADDON_6_NAME := "Imei Backup"
-SHRP_EXTERNAL_ADDON_6_INFO := "Takes Imei backup"
-SHRP_EXTERNAL_ADDON_6_FILENAME := "Imei-Backup.zip"
-SHRP_EXTERNAL_ADDON_6_BTN_TEXT := "Flash"
-SHRP_EXTERNAL_ADDON_6_SUCCESSFUL_TEXT := "Flashed Successfully"
-SHRP_INC_IN_REC_EXTERNAL_ADDON_6 := true
-INC_IN_REC_ADDON_1 := true
-INC_IN_REC_ADDON_2 := true
-INC_IN_REC_ADDON_3 := true
-INC_IN_REC_ADDON_4 := true
-INC_IN_REC_ADDON_5 := true
-INC_IN_REC_ADDON_6 := true
-# Official Fix
-TEMPORARY_DISABLE_PATH_RESTRICTIONS := true
