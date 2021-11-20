@@ -19,6 +19,9 @@ DEVICE_PATH := device/realme/RMX2020
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+# Build
+BUILD_BROKEN_DUP_RULES := true
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := RMX2020,RMX2027,rmx2020,zipkus,monet,realme_monet,rmx2027
 
