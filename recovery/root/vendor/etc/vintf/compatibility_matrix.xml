@@ -31,10 +31,4 @@
         <name>android.system.wifi.keystore</name>
         <version>1.0</version>
     </hal>
-    <vendor-ndk>
-        <version>29</version>
-    </vendor-ndk>
-    <system-sdk>
-        <version>29</version>
-    </system-sdk>
 </compatibility-matrix>

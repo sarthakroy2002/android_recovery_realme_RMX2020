@@ -33,7 +33,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_DEVICE := RMX2020
 PRODUCT_NAME := twrp_RMX2020
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := Realme C3/Narzo 10A
+PRODUCT_MODEL := Realme Monet
 PRODUCT_MANUFACTURER := realme
 TW_DEVICE_VERSION := By sarthakroy2002 (For RealmeUI 1.0)
 

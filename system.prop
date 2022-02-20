@@ -9,3 +9,5 @@ ro.treble.enabled=true
 ro.mediatek.platform=MT6768
 ro.hardware=mt6768
 ro.boot.dynamic_partitions=true
+ro.boot.avb_version=1.1
+ro.boot.vbmeta.avb_version=1.1

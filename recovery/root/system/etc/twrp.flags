@@ -4,10 +4,12 @@
 /vendor                 ext4    /dev/block/mapper/vendor                                flags=backup=1;display="Vendor"
 /system_image	        emmc	/dev/block/mapper/system                                flags=backup=1;display="System Image";flashimg=1
 /vendor_image	        emmc	/dev/block/mapper/vendor                                flags=backup=1;display="Vendor Image";flashimg=1
-
-oppo_product		ext4	/oppo_product										display="oppo_product";
-oppo_engineering	ext4	/oppo_engineering									display="oppo_engineering";
-preload_common		ext4	/common_preload										display="preload_common";
+/product		        ext4	/dev/block/mapper/product                               flags=backup=1;display="Product"
+/odm                    ext4    /dev/block/mapper/odm                                   flags=backup=1;display="ODM"
+/system_ext             ext4    /dev/block/mapper/system_ext                            flags=backup=1;display="System_ext"
+/product_image	        emmc	/dev/block/mapper/product                               flags=backup=1;display="Product Image";flashimg=1
+/odm_image	            emmc	/dev/block/mapper/odm                                   flags=backup=1;display="ODM Image";flashimg=1
+/system_ext_image	    emmc	/dev/block/mapper/system_ext                            flags=backup=1;display="System_ext Image";flashimg=1
 
 
 /proinfo			emmc	/dev/block/platform/bootdevice/by-name/proinfo		flags=display="proinfo";backup=1
@@ -32,6 +34,7 @@ preload_common		ext4	/common_preload										display="preload_common";
 /metadata			emmc	/dev/block/platform/bootdevice/by-name/metadata
 /cache				ext4	/dev/block/platform/bootdevice/by-name/cache
 /data				ext4	/dev/block/platform/bootdevice/by-name/userdata		flags=fileencryption=aes-256-cts
+/data				f2fs	/dev/block/platform/bootdevice/by-name/userdata		flags=fileencryption=aes-256-cts
 /dtbo				emmc 	/dev/block/platform/bootdevice/by-name/dtbo 		flags=display="DTBo";backup=1
 /vbmeta				emmc 	/dev/block/platform/bootdevice/by-name/vbmeta 		flags=display="VBmeta";backup=1
 
