@@ -35,7 +35,7 @@ PRODUCT_NAME := twrp_RMX2020
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme C3/Narzo 10A
 PRODUCT_MANUFACTURER := realme
-TW_DEVICE_VERSION := By sarthakroy2002
+TW_DEVICE_VERSION := By sarthakroy2002 (For RealmeUI 1.0)
 
 # HACK: Set vendor patch level
 PRODUCT_PROPERTY_OVERRIDES += \
