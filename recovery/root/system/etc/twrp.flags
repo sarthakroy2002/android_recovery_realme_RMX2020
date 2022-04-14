@@ -1,12 +1,12 @@
 # mount point		fstype	device                 device2                        flags
 # Dyanmic Partitions
-/system		            ext4	/dev/block/mapper/system                                flags=backup=1;display="System"
-/vendor                 ext4    /dev/block/mapper/vendor                                flags=backup=1;display="Vendor"
+/system		            ext4	/dev/block/mapper/system                                flags=backup=1;display="System";wipeingui
+/vendor                 ext4    /dev/block/mapper/vendor                                flags=backup=1;display="Vendor";wipeingui
 /system_image	        emmc	/dev/block/mapper/system                                flags=backup=1;display="System Image";flashimg=1
 /vendor_image	        emmc	/dev/block/mapper/vendor                                flags=backup=1;display="Vendor Image";flashimg=1
-/product		        ext4	/dev/block/mapper/product                               flags=backup=1;display="Product"
-/odm                    ext4    /dev/block/mapper/odm                                   flags=backup=1;display="ODM"
-/system_ext             ext4    /dev/block/mapper/system_ext                            flags=backup=1;display="System_ext"
+/product		        ext4	/dev/block/mapper/product                               flags=backup=1;display="Product";wipeingui
+/odm                    ext4    /dev/block/mapper/odm                                   flags=backup=1;display="ODM";wipeingui
+/system_ext             ext4    /dev/block/mapper/system_ext                            flags=backup=1;display="System_ext";wipeingui
 /product_image	        emmc	/dev/block/mapper/product                               flags=backup=1;display="Product Image";flashimg=1
 /odm_image	            emmc	/dev/block/mapper/odm                                   flags=backup=1;display="ODM Image";flashimg=1
 /system_ext_image	    emmc	/dev/block/mapper/system_ext                            flags=backup=1;display="System_ext Image";flashimg=1
@@ -31,10 +31,10 @@
 /frp				emmc	/dev/block/platform/bootdevice/by-name/frp			flags=display="frp";backup=1
 /nvdata				ext4	/dev/block/platform/bootdevice/by-name/nvdata		flags=display="nvdata";backup=1
 /persist			ext4	/dev/block/platform/bootdevice/by-name/persist		flags=display="Persist";backup=1
-/metadata			emmc	/dev/block/platform/bootdevice/by-name/metadata
-/cache				ext4	/dev/block/platform/bootdevice/by-name/cache
-/data				ext4	/dev/block/platform/bootdevice/by-name/userdata		flags=fileencryption=aes-256-cts
-/data				f2fs	/dev/block/platform/bootdevice/by-name/userdata		flags=fileencryption=aes-256-cts
+/metadata			emmc	/dev/block/platform/bootdevice/by-name/md_udc
+/cache				ext4	/dev/block/platform/bootdevice/by-name/cache        flags=display="Cache";wipeingui
+/data				ext4	/dev/block/platform/bootdevice/by-name/userdata		flags=fileencryption=aes-256-xts
+/data				f2fs	/dev/block/platform/bootdevice/by-name/userdata		flags=fileencryption=aes-256-xts
 /dtbo				emmc 	/dev/block/platform/bootdevice/by-name/dtbo 		flags=display="DTBo";backup=1
 /vbmeta				emmc 	/dev/block/platform/bootdevice/by-name/vbmeta 		flags=display="VBmeta";backup=1
 
