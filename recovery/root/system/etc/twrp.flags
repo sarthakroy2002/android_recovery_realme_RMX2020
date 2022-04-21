@@ -1,15 +1,15 @@
 # mount point		fstype	device                 device2                        flags
 # Dyanmic Partitions
-/system		            ext4	/dev/block/mapper/system                                flags=backup=1;display="System";wipeingui
-/vendor                 ext4    /dev/block/mapper/vendor                                flags=backup=1;display="Vendor";wipeingui
-/system_image	        emmc	/dev/block/mapper/system                                flags=backup=1;display="System Image";flashimg=1
-/vendor_image	        emmc	/dev/block/mapper/vendor                                flags=backup=1;display="Vendor Image";flashimg=1
-/product		        ext4	/dev/block/mapper/product                               flags=backup=1;display="Product";wipeingui
-/odm                    ext4    /dev/block/mapper/odm                                   flags=backup=1;display="ODM";wipeingui
-/system_ext             ext4    /dev/block/mapper/system_ext                            flags=backup=1;display="System_ext";wipeingui
-/product_image	        emmc	/dev/block/mapper/product                               flags=backup=1;display="Product Image";flashimg=1
-/odm_image	            emmc	/dev/block/mapper/odm                                   flags=backup=1;display="ODM Image";flashimg=1
-/system_ext_image	    emmc	/dev/block/mapper/system_ext                            flags=backup=1;display="System_ext Image";flashimg=1
+/system		            ext4	/dev/block/mapper/system                                flags=backup=1;display="System"
+/vendor                 ext4    /dev/block/mapper/vendor                                flags=backup=1;display="Vendor"
+/system_image	        emmc	/dev/block/mapper/system                                flags=backup=1;display="System Image";flashimg=1;wipeingui
+/vendor_image	        emmc	/dev/block/mapper/vendor                                flags=backup=1;display="Vendor Image";flashimg=1;wipeingui
+/product		        ext4	/dev/block/mapper/product                               flags=backup=1;display="Product"
+/odm                    ext4    /dev/block/mapper/odm                                   flags=backup=1;display="ODM"
+/system_ext             ext4    /dev/block/mapper/system_ext                            flags=backup=1;display="System_ext"
+/product_image	        emmc	/dev/block/mapper/product                               flags=backup=1;display="Product Image";flashimg=1;wipeingui
+/odm_image	            emmc	/dev/block/mapper/odm                                   flags=backup=1;display="ODM Image";flashimg=1;wipeingui
+/system_ext_image	    emmc	/dev/block/mapper/system_ext                            flags=backup=1;display="System_ext Image";flashimg=1;wipeingui
 
 
 /proinfo			emmc	/dev/block/platform/bootdevice/by-name/proinfo		flags=display="proinfo";backup=1
