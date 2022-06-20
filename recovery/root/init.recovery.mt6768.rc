@@ -103,4 +103,7 @@ on property:sys.usb.config=fastboot
     start servicemanager
     start hwservicemanager
     restart fastbootd
-    
+
+ on property:persist.vendor.radio.port_index=""
+    setprop sys.usb.config adb
+       
