@@ -1,6 +1,10 @@
+on init 
+    start adbd
+
 on fs
     install_keyring
     mkdir /mnt/vendor/persist 0777 system system
+    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
     setprop crypto.ready 1
     write /sys/class/power_supply/usb/otg_switch 1
 
@@ -20,14 +24,25 @@ service keystore /system/bin/keystore /tmp/misc/keystore
 service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
     -r /vendor/app/mcRegistry/06090000000000000000000000000000.drbin \
     -r /vendor/app/mcRegistry/020f0000000000000000000000000000.drbin \
-    -r /vendor/app/mcRegistry/05120000000000000000000000000000.drbin
+    -r /vendor/app/mcRegistry/05120000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/020b0000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/05070000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/030b0000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/03100000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/030c0000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/40188311faf343488db888ad39496f9a.drbin \
+    -r /vendor/app/mcRegistry/070c0000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/090b0000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/0f5eed3c3b5a47afacca69a84bf0efad.drbin \
+    -r /vendor/app/mcRegistry/07060000000000000000000000007169.drbin \
+    -r /vendor/app/mcRegistry/07407000000000000000000000000000.drbin \
+    -r /vendor/app/mcRegistry/9073f03a9618383bb1856eb3f990babd.drbin
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
 
-#Add for OPPO FBE
-service hal_cryptoeng_oppo /system/bin/hw/vendor.oppo.hardware.cryptoeng@1.0-service
+service hal_cryptoeng_oppo /system/bin/vendor.oppo.hardware.cryptoeng@1.0-service
     user root
     group root drmrpc
     disabled
@@ -39,7 +54,7 @@ service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service.truston
     disabled
     seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+service gatekeeper-1-0 /system/bin/android.hardware.gatekeeper@1.0-service
     user root
     group root
     disabled
@@ -61,30 +76,31 @@ on property:hwservicemanager.ready=true
     start gatekeeper-1-0
 
 on property:ro.crypto.state=unsupported
-    stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
-    stop hwservicemanager
+    stop hal_cryptoeng_oppo
     stop keymaster-4-0
     stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
 
 on property:ro.crypto.state=unencrypted
-    stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
-    stop hwservicemanager
+    stop hal_cryptoeng_oppo
     stop keymaster-4-0
     stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
 
 on property:twrp.decrypt.done=true
-    stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
-    stop hwservicemanager
+    stop hal_cryptoeng_oppo
     stop keymaster-4-0
     stop gatekeeper-1-0
+    stop servicemanager
+    stop hwservicemanager
 
 on property:sys.usb.config=fastboot
     start servicemanager
     start hwservicemanager
     restart fastbootd
+    
