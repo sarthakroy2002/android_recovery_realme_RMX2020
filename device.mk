@@ -25,13 +25,7 @@ PRODUCT_PACKAGES += \
 
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
-	libkeymaster4 \
-	android.hardware.boot@1.2 \
-	libsoftkeymasterdevice \
-	libpuresoftkeymasterdevice
+	android.hardware.boot@1.2
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
-	$(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
 	$(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.2.so \
-	$(TARGET_OUT_SHARED_LIBRARIES)/libsoftkeymasterdevice.so \
-	$(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
