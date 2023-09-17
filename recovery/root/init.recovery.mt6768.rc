@@ -1,16 +1,12 @@
 on init
     mkdir /mnt/vendor/persist
     mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
-    export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw
-
-
+    setprop persist.sys.firstlaunch false
+    
 on fs
     install_keyring
     setprop crypto.ready 1
     write /sys/class/power_supply/usb/otg_switch 1
-    write /sys/class/oplus_chg/usb/otg_switch 1
-
-on post-fs
 
 service keystore_auth /system/bin/keystore_auth
     oneshot
@@ -21,11 +17,10 @@ service keystore_auth /system/bin/keystore_auth
 
 service keystore /system/bin/keystore /tmp/misc/keystore
     user root
-    group root drmrpc readproc log
+    group root drmrpc readproc
     disabled
     seclabel u:r:recovery:s0
 
-# Start Daemon (Registry directories should already be present)
 service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
     -r /vendor/app/mcRegistry/06090000000000000000000000000000.drbin \
     -r /vendor/app/mcRegistry/020f0000000000000000000000000000.drbin \
@@ -38,7 +33,7 @@ service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
 #Add for OPPO FBE
 service hal_cryptoeng_oppo /system/bin/hw/vendor.oplus.hardware.cryptoeng@1.0-service
     user root
-    group root input sdcard_rw sdcard_r
+    group root drmrpc
     disabled
     seclabel u:r:recovery:s0
 
@@ -63,10 +58,10 @@ on property:hwservicemanager.ready=true
 on property:ro.crypto.state=unsupported
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop keymaster-4-0
-    stop gatekeeper-1-0
     stop servicemanager
     stop hwservicemanager
+    stop keymaster-4-0
+    stop gatekeeper-1-0
 
 on property:ro.crypto.state=unencrypted
     stop hal_cryptoeng_oppo
@@ -79,15 +74,20 @@ on property:ro.crypto.state=unencrypted
 on property:twrp.decrypt.done=true
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop keymaster-4-0
-    stop gatekeeper-1-0
     stop servicemanager
     stop hwservicemanager
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+  
+on property:enable.fbe.service=0
+    stop hal_cryptoeng_oppo
+    stop mobicore
+    stop servicemanager
+    stop hwservicemanager
+    stop keymaster-4-0
+    stop gatekeeperd
+    stop vendor.gatekeeper-1-0    
 
-on post-fs-data
-    mkdir /data/vendor_de 0770 system system
-    mkdir /data/vendor_de/0 0770 system system
-    mkdir /data/vendor_de/0/cryptoeng 0770 system system
-
-on boot
-    start health-hal-2-1
+on property:sys.usb.config=fastboot
+    start servicemanager
+    start hwservicemanager
