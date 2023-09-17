@@ -1,7 +1,6 @@
 Realme C3/Realme Narzo 10A Device Tree - RMX2020/RMX2027
 ================================================================
 
-
 Basic   | Spec Sheet
 -------:|:-------------------------
 CPU     | Octa-core (2x2.0 GHz Cortex-A75 & 6x1.7 GHz Cortex-A55)
@@ -18,7 +17,4 @@ Rear Camera  | Dual : 13 MP; 2MP(depth); 2MP(Macro- only Narzo 10A and C3 Global
 Front Camera | Single: 5 MP
 Release Month | 2020, February 14 | 2020, May 22 
 
-![Realme C3](https://fdn2.gsmarena.com/vv/pics/realme/realme-c3-2020-2.jpg "Realme C3")
-
-
-Copyright (C) 2021 Team Win Recovery Project
+Copyright (C) 2023 Team Win Recovery Project
