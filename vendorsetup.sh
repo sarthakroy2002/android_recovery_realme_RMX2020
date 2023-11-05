@@ -50,7 +50,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# -- add settings for R11 --
 	export FOX_R11=1
-	export OF_QUICK_BACKUP_LIST="/boot;/data;/system;/product;/system_ext;/vendor;"
+	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	export OF_USE_TWRP_SAR_DETECT=1
 	#export FOX_ADVANCED_SECURITY=1
 	# -- end R11 settings --
