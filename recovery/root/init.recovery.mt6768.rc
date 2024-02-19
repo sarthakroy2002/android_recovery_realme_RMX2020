@@ -2,6 +2,9 @@ on init
     mkdir /mnt/vendor/persist
     mount ext4 /dev/block/by-name/persist /mnt/vendor/persist rw
     setprop persist.sys.firstlaunch false
+
+# For vibrator
+   write /sys/class/leds/vibrator/trigger "transient"
     
 on fs
     install_keyring
@@ -49,6 +52,12 @@ service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
     disabled
     seclabel u:r:recovery:s0
 
+service vendor.vibrator-default /vendor/bin/hw/android.hardware.vibrator-service.mediatek
+    class hal
+    user root
+    group root system
+    seclabel u:r:recovery:s0
+
 on property:hwservicemanager.ready=true
     start hal_cryptoeng_oppo
     start mobicore
@@ -58,28 +67,24 @@ on property:hwservicemanager.ready=true
 on property:ro.crypto.state=unsupported
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
     stop keymaster-4-0
     stop gatekeeper-1-0
 
 on property:ro.crypto.state=unencrypted
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
     stop keymaster-4-0
     stop gatekeeper-1-0
 
 on property:twrp.decrypt.done=true
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
     stop keymaster-4-0
     stop gatekeeper-1-0
   
 on property:enable.fbe.service=0
     stop hal_cryptoeng_oppo
     stop mobicore
-    stop servicemanager
     stop keymaster-4-0
     stop gatekeeperd
     stop vendor.gatekeeper-1-0    
@@ -91,3 +96,12 @@ on property:sys.usb.config=fastboot
 
 on boot
     start health-hal-2-1
+    start vendor.vibrator-default
+
+ # For vibrator
+    chown system system /sys/class/leds/vibrator/trigger
+    chown system system /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/brightness
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/state
+    chown system system /sys/class/timed_output/vibrator/enable
