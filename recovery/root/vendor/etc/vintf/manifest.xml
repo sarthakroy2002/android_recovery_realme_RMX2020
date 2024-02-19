@@ -1,4 +1,14 @@
 <manifest version="2.0" type="device" target-level="4">
+    <hal format="aidl">
+        <name>android.hardware.vibrator</name>
+        <version>2</version>
+        <fqname>IVibrator/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.vibrator</name>
+        <version>2</version>
+        <fqname>IVibratorManager/default</fqname>
+    </hal>
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>

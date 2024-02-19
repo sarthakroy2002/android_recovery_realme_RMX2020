@@ -133,18 +133,23 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_USE_FSCRYPT_POLICY := 1
 TW_PREPARE_DATA_MEDIA_EARLY := true
 
+# Haptics
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
     libpuresoftkeymasterdevice \
     ashmemd_aidl_interface-cpp \
-    libashmemd_client
+    libashmemd_client \
+    android.hardware.vibrator-V1-ndk_platform
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V1-ndk_platform.so
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -166,7 +171,6 @@ TARGET_USES_MKE2FS := true
 TW_EXCLUDE_TWRPAPP := true
 TW_OZIP_DECRYPT_KEY := 0000
 TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
-TW_NO_HAPTICS := true
 TW_FRAMERATE := 60
 TW_OVERRIDE_SYSTEM_PROPS := \
     "ro.build.date.utc;ro.build.product"
