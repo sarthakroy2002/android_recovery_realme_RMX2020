@@ -59,7 +59,6 @@ on property:ro.crypto.state=unsupported
     stop hal_cryptoeng_oppo
     stop mobicore
     stop servicemanager
-    stop hwservicemanager
     stop keymaster-4-0
     stop gatekeeper-1-0
 
@@ -67,7 +66,6 @@ on property:ro.crypto.state=unencrypted
     stop hal_cryptoeng_oppo
     stop mobicore
     stop servicemanager
-    stop hwservicemanager
     stop keymaster-4-0
     stop gatekeeper-1-0
 
@@ -75,7 +73,6 @@ on property:twrp.decrypt.done=true
     stop hal_cryptoeng_oppo
     stop mobicore
     stop servicemanager
-    stop hwservicemanager
     stop keymaster-4-0
     stop gatekeeper-1-0
   
@@ -83,7 +80,6 @@ on property:enable.fbe.service=0
     stop hal_cryptoeng_oppo
     stop mobicore
     stop servicemanager
-    stop hwservicemanager
     stop keymaster-4-0
     stop gatekeeperd
     stop vendor.gatekeeper-1-0    
@@ -91,3 +87,7 @@ on property:enable.fbe.service=0
 on property:sys.usb.config=fastboot
     start servicemanager
     start hwservicemanager
+
+on boot
+    setprop sys.usb.config adb
+    start health-hal-2-1

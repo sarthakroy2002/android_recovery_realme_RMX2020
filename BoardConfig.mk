@@ -49,7 +49,7 @@ TARGET_USES_UEFI := true
 TARGET_BOARD_PLATFORM := mt6768
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := RMX2020,RMX2027,rmx2020
+TARGET_OTA_ASSERT_DEVICE := RMX2020,RMX2027,Realme C3
 
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
@@ -155,6 +155,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_FUSE_EXFAT := true
 TW_INCLUDE_FUSE_NTFS := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone3/temp
