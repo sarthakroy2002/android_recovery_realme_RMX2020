@@ -1,4 +1,4 @@
-![RealmeC3](https://github.com/MisterZtr/recovery_device_realme_RMX2020/assets/87061244/1d098ca4-e4a3-4a1f-a2fe-47b180ce5716)
+![RealmeC3](https://github.com/MisterZtr/recovery_device_realme_RMX2020/assets/87061244/bfda8b7f-41bf-4322-bc17-c3c119ab6d2a)
 
 Realme C3/Realme Narzo 10A Device Tree - RMX2020/RMX2027
 ================================================================
