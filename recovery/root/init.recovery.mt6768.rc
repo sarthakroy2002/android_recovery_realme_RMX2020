@@ -87,6 +87,7 @@ on property:enable.fbe.service=0
 on property:sys.usb.config=fastboot
     start servicemanager
     start hwservicemanager
+    restart fastbootd
 
 on boot
     start health-hal-2-1
